@@ -33,7 +33,7 @@
 					<hr>
 					<div class="boardwrite-btn">
 						<label for="file-button"><i class="fas fa-image fa-2x"></i></label>
-						<input id="file-button" type="file" multiple>
+						<input id="file-button" type="file" accept="image/*" multiple>
 						<button type="button" onclick="addBoard('board-form');"><i class="fas fa-pen"></i></button>
 					</div>
 				</form>

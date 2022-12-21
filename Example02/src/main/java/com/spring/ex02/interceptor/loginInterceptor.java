@@ -29,7 +29,7 @@ public class loginInterceptor extends HandlerInterceptorAdapter {
             	else {
             		session.setAttribute("prev_url", path );
             	}
-            	response.sendRedirect("/login");
+            	response.sendRedirect(request.getContextPath()+"/login");
             	return false;
              }
 		}

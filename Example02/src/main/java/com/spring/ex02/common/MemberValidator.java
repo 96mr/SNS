@@ -21,17 +21,15 @@ public class MemberValidator implements Validator {
 	
 	@Override
 	public boolean supports(Class<?> clazz) {
-		// TODO Auto-generated method stub
 		return MemberVO.class.isAssignableFrom(clazz);
 	}
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		// TODO Auto-generated method stub
 		MemberVO vo = (MemberVO) target;	// 유효성 검사하기 위해 받아온 데이터
-		String id = vo.getId();				// id의 유효성 검사를 위한 변수
-		String pw = vo.getPassword();		// pw 유효성 검사 위한 변수
-
+		String id = vo.getId();				
+		String pw = vo.getPassword();		
+		
 		if(id == null || id.trim().isEmpty()) {		
 			errors.rejectValue("id", "required", "아이디를 입력해주세요");	
 		}else {
@@ -40,7 +38,8 @@ public class MemberValidator implements Validator {
 			if(!matcher.matches())
 				errors.rejectValue("id", "bad", "아이디는 영문자와 숫자로만 이루어져야 합니다(4~20자)");
 		}
-		if(pw == null || pw.trim().isEmpty())	//pw null이거나 공백일때
+		
+		if(pw == null || pw.trim().isEmpty())
 			errors.rejectValue("password", "required", "비밀번호를 입력해주세요");
 		else {
 			pattern = Pattern.compile(pwRegExp);

@@ -130,7 +130,7 @@ public class BoardController {
 		logger.info("write post :"+ content.toString());
 		String user_id = (String) session.getAttribute("sessionID");
 		if(user_id == null) {
-			return "login";
+			return "redirect:/login";
 		}
 		
 		if(content.length()>300) {
