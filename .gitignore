@@ -85,6 +85,8 @@ local.properties
 ### Java ###
 # Compiled class file
 *.class
+email-context.xml
+database.properties
 
 # Log file
 *.log
