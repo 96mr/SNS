@@ -8,7 +8,7 @@ function follow_btn(e, str){                       //팔로우, 언팔로우
 	  	  	success: function(data){
 	  	  	  	$(e).addClass('active');
 	  	  	  	ff_count();
-	  	  	  	send_alarms(str);
+	  	  	  	websocket.send(str);
 	  	  	},
 	  	  	error: function(error){
 	  	  	  	if(error.status == 500){
