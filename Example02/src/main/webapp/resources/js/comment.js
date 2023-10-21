@@ -14,7 +14,7 @@ function addComment(formName){
 		success: function(data){
 			$('form').each(function() { this.reset(); });
 			commentList(boardNO);
-			send_alarms(data);
+			websocket.send(data);
 		},
 		error:function(request,status,error){
 			   alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
