@@ -17,7 +17,7 @@ function likeButton(board){
 			success:function(data){
 				isLike(board);
 				Likes(board);
-				send_alarms(data);
+				websocket.send(data);
 			},
 			error: function(error){
 	  	  	  	if(error.status == 500){
