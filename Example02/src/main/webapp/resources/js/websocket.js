@@ -1,4 +1,4 @@
-var socket = null;
+var websocket = null;
 	
 $(document).ready(function (){
 	if(loginID){
